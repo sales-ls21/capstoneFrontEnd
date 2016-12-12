@@ -1,0 +1,21 @@
+<h1>Search for Universities by Major, Sport, or Location</h1>
+<p>Below you can search by either major, sport, or location. When entering a location, please enter the postal abbreviation.</p>
+<div class="row">
+  <form>
+    <div class="form-group">
+      <label>Major</label>
+      <input type="text" class="form-control"  ng-model="major"/>
+      <button class="btn btn-default" ng-click="searchMajor()">Search By Major</button>
+    </div>
+    <div class="form-group">
+      <label>Sport</label>
+      <input type="text" class="form-control" ng-model="sport"/>
+     <button class="btn btn-default"><a ng-click="searchSport()">Search By Sport</a></button>
+    </div>
+    <div class="form-group">
+      <label>Location</label>
+      <input type="text" class="form-control" ng-model="location"/>
+      <button class="btn btn-default"><a ng-click="searchLocation()">Search By Location</a></button>
+    </div>
+  </form>
+</div>
