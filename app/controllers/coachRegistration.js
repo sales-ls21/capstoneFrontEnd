@@ -9,7 +9,6 @@ app.controller("coachRegistration", function($scope, $location, authFactory, use
 		email:"",
 		phone:"938505830",
 		sport:"basketball",
-		password: "",
 		userType: "coach",
 	};
 

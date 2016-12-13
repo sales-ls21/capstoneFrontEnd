@@ -2,6 +2,7 @@
 
 app.factory("setDataFactory", function($location){
 	let athletes;
+	let selectedAthlete;
 	
 	let setAthletes = (searchedAthlete)=>{
 		athletes = searchedAthlete.data;
@@ -10,5 +11,15 @@ app.factory("setDataFactory", function($location){
 	let getAthletes = ()=>{
 		return athletes;
 	};
-	return{setAthletes, getAthletes};
+
+	let setSingleAthlete = (foundAthlete)=>{
+		console.log(foundAthlete);
+		selectedAthlete = foundAthlete;
+	};
+
+	let getSingleAthlete = ()=>{
+		return selectedAthlete;
+	};
+
+	return{setAthletes, getAthletes, setSingleAthlete, getSingleAthlete};
 });

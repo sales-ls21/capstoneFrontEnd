@@ -3,8 +3,7 @@
   <div ng-repeat="person in displayResults">
     <div class="panel panel-default">
       <div class="panel-body">      
-      <div class="col-xs-7"><a ng-href="#/athleteSearchResults/{{person.name}}">{{person.name}}</a></div>
-      <div class="col-xs-7"></div>
+      <div class="col-xs-7"><a ng-href="/athleteSearchResults/{{person.name}}">{{person.name}}</a></div>
         <div class="col-xs-1"><button class="btn btn-danger" ng-click="remove()">Remove From List</button></div>
       </div>
     </div>

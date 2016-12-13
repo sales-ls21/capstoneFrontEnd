@@ -3,7 +3,18 @@
 var app = angular.module("pipeline", ["ngRoute", "angularFileUpload"]);
 
 //will need to set this up to prevent users from seeing info without being logged in
-let authorization;
+let isAuth = function(authFactory){
+	return new Promise ((resolve, reject)=>{
+		authFactory.isAuthenticated()
+		.then((user)=>{
+			if(user){
+				resolve();
+			} else{
+				reject();
+			}
+		});
+	});
+};
 
 
 //this configures the routing for partials and controllers
@@ -23,7 +34,8 @@ app.config(function($routeProvider){
 	})
 	.when("/createAthleteProfile",{
 		templateUrl: "partials/createAthleteProfile.html",
-		controller: "createAthleteProfile"
+		controller: "createAthleteProfile",
+		resolve: {isAuth}
 	})
 	.when("/login", {
 		templateUrl: "partials/login.html",
@@ -57,7 +69,7 @@ app.config(function($routeProvider){
 		templateUrl: "partials/athleteSearchResults.html",
 		controller: "athleteResultsCtrl"
 	})
-	.when("/athleteDetails/:name", {
+	.when("/athleteSearchResults/:name", {
 		templateUrl: "partials/athleteDetails.html",
 		controller: "athleteDetailsCtrl"
 	})

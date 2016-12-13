@@ -1,13 +1,12 @@
 "use strict";
 
-app.controller("athleteRegistration", function($scope, userFactory, authFactory, $window){
+app.controller("athleteRegistration", function($scope, userFactory, authFactory, $location){
 
 	$scope.athlete = {
 		name: "",
 		age: "",
 		birthdate:"",
 		email: "",
-		password: "",
 		gender:"",
 		grade:"",
 		sport:"",
@@ -19,12 +18,11 @@ app.controller("athleteRegistration", function($scope, userFactory, authFactory,
 	$scope.studentRegister = ()=>{
 		console.log($scope.athlete.email, $scope.athlete.password);
 		authFactory.createUser($scope.athlete)
-		.then(()=>{
+		.then((newUser)=>{
+			$scope.athlete.uid = newUser.uid;
 			userFactory.storeNewUser($scope.athlete)
 		.then(()=>{
-			console.log("here");
-			$window.location.href = "/createAthleteProfile";
-			$scope.$apply();
+			$location.url("/createAthleteProfile");
 			});
 		});	
 	};

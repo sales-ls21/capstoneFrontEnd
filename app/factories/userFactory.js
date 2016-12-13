@@ -11,15 +11,10 @@ app.factory("userFactory", function(FBConfig, $http, $q){
 	};
 
 
-	let updateProfile = (user, profileObj, FBConfig)=>{
+	let updateProfile = (user, profileObj)=>{
 		return new Promise((resolve, reject)=>{
-			$http.patch(`${FBConfig.databaseURL}/users/${user}.json`, angular.toJson(profileObj))
-			.success((obj)=>{
-				resolve(obj);
-			})
-			.error((error)=>{
-				reject(error);
-			});
+			$http.patch(`${FBConfig.databaseURL}/users/${user}.json`, angular.toJson(profileObj));
+			resolve();
 		});
 	};
 
@@ -29,13 +24,9 @@ app.factory("userFactory", function(FBConfig, $http, $q){
 			$http.get(`${FBConfig.databaseURL}/users.json?orderBy="name"&equalTo="${uid}"`)
 			.then( (obj)=>{
 				resolve(obj);
-			})
-			.error((error)=>{
-				reject(error);
-			});
 		});
-	};
-
+	});
+};
 	//is this how to pull the video and photos?
 
 	let getUserMedia = (user)=>{
@@ -49,5 +40,14 @@ app.factory("userFactory", function(FBConfig, $http, $q){
 		});
 	};
 
-	return{storeNewUser, updateProfile, findUserData, getUserMedia};
+	let getSingleUser = (currentUser)=>{
+		return new Promise((resolve, reject)=>{
+			$http.get(`${FBConfig.databaseURL}/users.json?orderBy="uid"&equalTo="${currentUser}"`)
+			.then((data)=>{
+			resolve(data.data);				
+			});
+		});
+	};
+
+	return{storeNewUser, updateProfile, findUserData, getUserMedia, getSingleUser};
 });
