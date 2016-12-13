@@ -1,6 +1,7 @@
 "use strict";
 
-app.controller("uploadCtrl", ['$scope', 'Upload', '$timeout', function (userFactory, authFactory, FBConfig, $scope, Upload, $timeout) {
+app.controller("uploadCtrl", function (userFactory, authFactory, FBConfig, $scope, Upload, $timeout) {
+
     $scope.uploadFiles = function(files, errFiles) {
         $scope.files = files;
         files.uid = authFactory.getUser();
@@ -26,4 +27,4 @@ app.controller("uploadCtrl", ['$scope', 'Upload', '$timeout', function (userFact
     };
 
 
-}]);
+});

@@ -1,0 +1,13 @@
+<h1>Search Results</h1>
+<p>Click on a university to get more details.</p>
+  <div ng-repeat= "university in sports" >
+  <div ng-if=university.wrestling>
+    <div class="panel panel-default">
+      <div class="panel-body">      
+      <div class="col-xs-7"><a ng-href="#/universityDetails/{{university.university}}">{{university.University}}</a></div>
+      <div class="col-xs-7">{{university.Address}}, {{university.State}}, {{university.ZIP}}</div>
+        <div class="col-xs-1"><button class="btn btn-danger" ng-click="remove()">Remove From List</button></div>
+      </div>
+    </div>
+    </div>
+</div>

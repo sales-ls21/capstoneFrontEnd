@@ -5,17 +5,17 @@ app.controller("createAthleteProfile", function($scope, userFactory, $location, 
 	
 	$scope.profileInfo = {
 
-		height:"5'9",
+		height:"6'0",
 		weight: "140",
-		position:"outfielder",
+		position:"forward",
 		varsity: "1",
 		jersey: "3",
 		stats: ".39 BA, 20RBIs, 10SB, 15HRs",
 		awards: "Freshman of the Year, All State Second Team, All Freshman First Team, Varsity Letter",
 		gpa: "3.2",
 		academic: "Principal's List",
-		schoolname: "Birchfield",
-		schoollocation: "Birchfield, MS",
+		schoolname: "Chino Hills",
+		schoollocation: "Chino, CA",
 		coachname: "Larry Anderson",
 		coachemail: "anderson@birchfield.com",
 		teamrecord:"13-2",
@@ -43,7 +43,7 @@ app.controller("createAthleteProfile", function($scope, userFactory, $location, 
 		.then((obj)=>{
 			var items = Object.keys(obj);
 			obj.userId = items[0];	
-		userFactory.updateProfile(user, $scope.profileInfo)
+		userFactory.updateProfile(obj.userId, $scope.profileInfo)
 		.then((obj)=>{
 			$location.url("/uploadMedia");
 		});

@@ -1,32 +1,35 @@
 "use strict";
 
-app.controller("universitySearchCtrl", function($scope, $location, dataFactory){
+app.controller("universitySearchCtrl", function($scope, $location, FBPull, setDataFactory){
 
 	$scope.major = "";
 	$scope.sport = "";
 	$scope.location = "";
 
 	$scope.searchMajor = ()=>{
-		dataFactory.getUniversityByMajor($scope.major)
+		FBPull.getUniversityByMajor($scope.major)
 		.then((majorArray)=>{
-			$location.url("/searchResults");
+			setDataFactory.setMajor(majorArray);
 		});
+			$location.url("/searchMajorResults");
 
 	};
 
 	$scope.searchSport = ()=>{
-		dataFactory.getUniversityBySport($scope.sport)
+		FBPull.getUniversityBySport($scope.sport)
 		.then((sportArray)=>{
-			$location.url("/searchResults");
+			console.log(sportArray);
+			setDataFactory.setSport(sportArray);
 		});
+			$location.url("/searchSportResults");
 	};
 
 	$scope.searchLocation = ()=>{
-		dataFactory.getUniversityByLocation($scope.location)
+		FBPull.getUniversityByLocation($scope.location)
 		.then((locationArray)=>{
-			$location.url("/searchResults");
+			setDataFactory.setLocation(locationArray);
 		});
-
+		$location.url("/searchLocationResults");
 	};
 	
 });

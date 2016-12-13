@@ -3,15 +3,15 @@
 app.controller("athleteRegistration", function($scope, userFactory, authFactory, $location){
 
 	$scope.athlete = {
-		name: "",
-		age: "",
-		birthdate:"",
-		email: "",
-		gender:"",
-		grade:"",
-		sport:"",
-		state:"",
-		major:"",
+		name: "Diana Taurasi",
+		age: "16",
+		birthdate:"08/17/2000",
+		email: "deeitaly@gmail.com",
+		gender:"female",
+		grade:"junior",
+		sport:"basketball",
+		state:"CA",
+		major:"communications",
 		userType: "athlete"
 	};
 

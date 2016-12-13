@@ -57,9 +57,9 @@ app.config(function($routeProvider){
 		templateUrl: "partials/universitySearch.html",
 		controller: "universitySearchCtrl"
 	}).
-	when("/searchResults", {
-		templateUrl: "partials/searchResults.html",
-		controller: "searchResultsCtrl"
+	when("/searchLocationResults", {
+		templateUrl: "partials/searchLocationResults.html",
+		controller: "searchLocationResultsCtrl"
 	})
 	.when("/universityDetails/:university", {
 		templateUrl: "partials/universityDetails.html",
@@ -72,6 +72,14 @@ app.config(function($routeProvider){
 	.when("/athleteSearchResults/:name", {
 		templateUrl: "partials/athleteDetails.html",
 		controller: "athleteDetailsCtrl"
+	})
+	.when("/searchMajorResults", {
+		templateUrl: "partials/searchMajorResults.html",
+		controller: "searchMajorResults"
+	})
+	.when("/searchSportResults", {
+		templateUrl: "partials/searchSportResults.html",
+		controller: "searchSportResults"
 	})
 	.otherwise("/");
 }).config(function($locationProvider){
