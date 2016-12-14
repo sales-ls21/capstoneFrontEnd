@@ -20,8 +20,9 @@ app.controller("login", function($scope, $location, authFactory, userFactory){
 			if(newObj.userType === "athlete"){
 				$location.url("/profileView");
 				$scope.$apply();
-			} else{
+			} else if(newObj.userType === "coach"){
 				$location.url("/searchAthletes");
+				$scope.$apply();
 			}	
 			});
 		});

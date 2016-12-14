@@ -14,10 +14,8 @@ app.controller("athleteSearchCtrl", function($scope, $location, $window, FBPull,
 	};
 
 	$scope.logout = ()=>{
-		authFactory.logoutUser()
-		.then((obj)=>{
-			$location.url("/home");
-		});
+		authFactory.logoutUser();
+		$location.url("/");
 	};
 	
 });

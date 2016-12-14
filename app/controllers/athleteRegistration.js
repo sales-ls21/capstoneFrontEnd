@@ -16,7 +16,6 @@ app.controller("athleteRegistration", function($scope, userFactory, authFactory,
 	};
 
 	$scope.studentRegister = ()=>{
-		console.log($scope.athlete.email, $scope.athlete.password);
 		authFactory.createUser($scope.athlete)
 		.then((newUser)=>{
 			$scope.athlete.uid = newUser.uid;
