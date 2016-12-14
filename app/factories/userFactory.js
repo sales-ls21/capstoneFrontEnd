@@ -43,9 +43,11 @@ app.factory("userFactory", function(FBConfig, $http, $q){
 	};
 
 	let getSingleUser = (currentUser)=>{
+		console.log("passed", currentUser);
 		return new Promise((resolve, reject)=>{
 			$http.get(`${FBConfig.databaseURL}/users.json?orderBy="uid"&equalTo="${currentUser}"`)
 			.then((data)=>{
+				console.log("returned", data.data);
 			resolve(data.data);				
 			});
 		});

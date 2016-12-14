@@ -18,7 +18,7 @@ userFactory.getSingleUser($scope.user).then((athleteArray)=>{
 
 $scope.logOut = ()=>{
 	authFactory.logoutUser().then((obj)=>{
-		$location.url("/home");
+		$location.url("/");
 	});
 };
 

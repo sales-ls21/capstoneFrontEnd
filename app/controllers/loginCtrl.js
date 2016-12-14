@@ -2,6 +2,8 @@
 
 app.controller("login", function($scope, $location, authFactory, userFactory){
 
+	var newObj;
+
 	$scope.user = {
 		email: "",
 		password: ""
@@ -10,14 +12,22 @@ app.controller("login", function($scope, $location, authFactory, userFactory){
 	$scope.login = ()=>{
 		console.log($scope.user);
 		authFactory.loginUser($scope.user).then((obj)=>{
-			userFactory.findUserData(obj.uid)
+			userFactory.getSingleUser(obj.uid)
 			.then( (obj)=>{
-			if(obj.userType === "athlete"){
+				for(var prop in obj){
+					newObj = obj[prop];
+				}
+			if(newObj.userType === "athlete"){
 				$location.url("/profileView");
+				$scope.$apply();
 			} else{
 				$location.url("/searchAthletes");
 			}	
 			});
 		});
+	};
+
+	$scope.home = ()=>{
+		$location.url("/");
 	};
 });
