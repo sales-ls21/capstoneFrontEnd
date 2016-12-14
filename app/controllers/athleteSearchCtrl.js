@@ -9,9 +9,8 @@ app.controller("athleteSearchCtrl", function($scope, $location, $window, FBPull,
 		FBPull.getAthlete($scope.index, $scope.input)
 		.then((obj)=>{
 			setDataFactory.setAthletes(obj);
-			$location.url("/athleteResults");
-			$scope.$apply();
 		});
+			$location.url("/athleteResults");
 	};
 
 	$scope.logout = ()=>{

@@ -1,10 +1,11 @@
 "use strict";
 
-app.controller("athleteDetailsCtrl", function($routeParams, userFactory, $scope){
+app.controller("athleteDetailsCtrl", function($routeParams, $scope, userFactory){
 	
-	userFactory.findUserData($routeParams.name).then((athleteObj)=>{
-		//CONSOLE.LOG here to find out what happened. 
-		$scope.athleteObj = athleteObj;
+	userFactory.findUserData($routeParams.name)
+	.then((obj)=>{
+		console.log(obj);
+		$scope.athleteObj = obj;
 		$scope.$apply();
 	});
 

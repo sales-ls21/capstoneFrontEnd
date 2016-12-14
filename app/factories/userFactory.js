@@ -20,10 +20,12 @@ app.factory("userFactory", function(FBConfig, $http, $q){
 
 //this to find all information on athletes to display on page
 	let findUserData = (uid)=>{
+		console.log("passed to findUserData", uid);
 		return new Promise( (resolve, reject)=>{
 			$http.get(`${FBConfig.databaseURL}/users.json?orderBy="name"&equalTo="${uid}"`)
 			.then( (obj)=>{
-				resolve(obj);
+				console.log("returned from findUserData", obj.data);
+				resolve(obj.data);
 		});
 	});
 };
