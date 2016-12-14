@@ -1,16 +1,16 @@
-<h1>More Information About {{selectedItem.university}}</h1>
 
 
-<div>
-<p>{{selectedItem.Address}}</p>
-<p>{{selectedItem.City}}</p>
-<p>{{selectedItem.State}}</p>
-<p>General Website: {{selectedItem.Website}}</p>
-<p>{{selectedItem.Admissions}}</p>
-<p>Athletic Website: {{selectedItem.Webpage}}</p>
-<p>{{selectedItem.Athletic Conference}}</p>
+<div ng-repeat="university in selectedItem">
+<h1>More Information About {{university.University}}</h1>
+<p>Address: {{university.Address}}</p>
+<p>City: {{university.City}}</p>
+<p>State: {{university.State}}</p>
+<p>General Website:<a href="{{university.Website}}">{{university.Website}}</a></p>
+<p>Admissions:<a href="{{university.Admissions}}">{{university.Admissions}}</a></p>
+<p>Athletic Website: <a href="{{university.Webpage}}">{{university.Webpage}}</a></p>
+<!-- <p>{{selectedItem.Athletic Conference}}</p> -->
 </div>
 
-<button class="btn btn-default" ng-href="#/searchResults">Return to Search</button>
+<button class="btn btn-default" href="/searchResults">Return to Search</button>
 
 <!-- how do I get previous search results to load immediately? -->

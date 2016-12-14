@@ -16,7 +16,6 @@ app.factory("setDataFactory", function($location){
 	};
 
 	let setSingleAthlete = (foundAthlete)=>{
-		console.log(foundAthlete);
 		selectedAthlete = foundAthlete;
 	};
 
@@ -30,12 +29,10 @@ app.factory("setDataFactory", function($location){
 
 	let setSport = (searchedSport)=>{
 		sport = searchedSport;
-		console.log(sport);
 	};
 
 	let setLocation = (searchedLocation)=>{
 		location = searchedLocation;
-		console.log(location);
 	};
 
 	let getLocation = ()=>{

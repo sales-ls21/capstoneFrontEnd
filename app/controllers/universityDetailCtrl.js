@@ -1,10 +1,11 @@
 "use strict";
 
-app.controller("universityDetailCtrl", function($scope, dataFactory, $routeParams){
+app.controller("universityDetailCtrl", function($scope, FBPull, $routeParams){
 
-	dataFactory.getSpecificUniversity($routeParams.university)
+	FBPull.getSpecificUniversity($routeParams.university)
 	.then((obj)=>{
 		$scope.selectedItem = obj;
+		console.log(obj);
 		$scope.$apply();
 	});
 });

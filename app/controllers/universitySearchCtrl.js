@@ -18,7 +18,6 @@ app.controller("universitySearchCtrl", function($scope, $location, FBPull, setDa
 	$scope.searchSport = ()=>{
 		FBPull.getUniversityBySport($scope.sport)
 		.then((sportArray)=>{
-			console.log(sportArray);
 			setDataFactory.setSport(sportArray);
 		});
 			$location.url("/searchSportResults");

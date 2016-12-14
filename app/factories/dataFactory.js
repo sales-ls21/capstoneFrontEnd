@@ -42,16 +42,16 @@ app.factory("FBPull", (FBConfig, $http)=>{
 		});
 	};
 
-	// let getSpecificUniversity = (university)=>{
-	// 	return new Promise ((resolve, reject)=>{
-	// 		$http.get(`${FBConfig.databaseURL}/universities.json?orderBy="university"&equalTo="${university}"`)
-	// 		.then((obj)=>{
-	// 			resolve(obj);
-	// 		}).error((error)=>{
-	// 			reject(error);
-	// 		});
-	// 	});
-	// };
+	let getSpecificUniversity = (university)=>{
+		console.log(university);
+		return new Promise ((resolve, reject)=>{
+			$http.get(`${FBConfig.databaseURL}/universities.json?orderBy="University"&equalTo="${university}"`)
+			.then((obj)=>{
+				console.log(obj.data);
+				resolve(obj.data);
+			});
+		});
+	};
 
 
 	let getAthlete = (index, input)=>{
@@ -62,6 +62,6 @@ app.factory("FBPull", (FBConfig, $http)=>{
 			});
 		});
 	};
-	return{loadUniversities, getUniversityByLocation, getUniversityBySport, getUniversityByMajor, getAthlete};
+	return{loadUniversities, getUniversityByLocation, getUniversityBySport, getUniversityByMajor, getAthlete, getSpecificUniversity};
 });
 

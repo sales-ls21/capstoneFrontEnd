@@ -10,12 +10,14 @@ app.controller("login", function($scope, $location, authFactory, userFactory){
 	$scope.login = ()=>{
 		console.log($scope.user);
 		authFactory.loginUser($scope.user).then((obj)=>{
-			userFactory.findUserData(obj.uid);
+			userFactory.findUserData(obj.uid)
+			.then( (obj)=>{
 			if(obj.userType === "athlete"){
 				$location.url("/profileView");
 			} else{
 				$location.url("/searchAthletes");
-			}
+			}	
+			});
 		});
 	};
 });

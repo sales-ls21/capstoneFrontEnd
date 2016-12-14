@@ -43,7 +43,8 @@ app.config(function($routeProvider){
 	})
 	.when("/profileView", {
 		templateUrl: "partials/profileView.html",
-		controller: "profileViewCtrl"
+		controller: "profileViewCtrl",
+		resolve: {isAuth}
 	})
 	.when("/searchAthletes",{
 		templateUrl: "partials/searchAthletes.html",
