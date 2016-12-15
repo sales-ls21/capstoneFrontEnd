@@ -1,16 +1,25 @@
-
-
-<div ng-repeat="university in selectedItem">
-<h1>More Information About {{university.University}}</h1>
-<p>Address: {{university.Address}}</p>
-<p>City: {{university.City}}</p>
-<p>State: {{university.State}}</p>
-<p>General Website:<a href="{{university.Website}}">{{university.Website}}</a></p>
-<p>Admissions:<a href="{{university.Admissions}}">{{university.Admissions}}</a></p>
-<p>Athletic Website: <a href="{{university.Webpage}}">{{university.Webpage}}</a></p>
-<!-- <p>{{selectedItem.Athletic Conference}}</p> -->
-</div>
-
-<button class="btn btn-default" href="/universitySearch">Return to Search</button>
-
-<!-- how do I get previous search results to load immediately? -->
+<div class="row" >
+        <div ng-repeat="university in selectedItem" class="col s8 offset-s2">
+          <div class="card medium">
+            <div class="card-image">
+              <img src="basketball.jpg">
+			  <h1 class="card-title">More Information About {{university.University}}</h1>
+            </div>
+            <div class="card-content">
+	            <div class="col s6">
+					<p>Address: {{university.Address}}</p>
+					<p>City: {{university.City}}</p>
+					<p>State: {{university.State}}</p>
+				</div>
+				<div class="col s6">
+					<p>General Website:<a href="{{university.Website}}">{{university.Website}}</a></p>
+					<p>Admissions:<a href="{{university.Admissions}}">{{university.Admissions}}</a></p>
+					<p>Athletic Website: <a href="{{university.Webpage}}">{{university.Webpage}}</a></p>
+	            </div>
+            </div>
+            <div class="card-action">
+				<button class="btn btn-default" href="/universitySearch">Return to Search</button>
+            </div>
+          </div>
+        </div>
+      </div>

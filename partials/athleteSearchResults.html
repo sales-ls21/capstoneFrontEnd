@@ -1,10 +1,19 @@
-<h1>Search Results</h1>
-<p>Click on an athlete to view his/her profile.</p>
-  <div ng-repeat="person in displayResults">
-    <div class="panel panel-default">
-      <div class="panel-body">      
-      <div class="col-xs-7"><a ng-href="/athleteSearchResults/{{person.name}}">{{person.name}}</a></div>
-        <div class="col-xs-1"><button class="btn btn-danger" ng-click="remove()">Remove From List</button></div>
+<div class="row">
+	<div class="col s10 offset-s2">
+	<h1>Search Results</h1>
+	<p>You may click on the links in the individual results to view more information or you may enter a search parameter below to filter the results.</p>
+	<input type="text" ng-model="searchText.search">
+	</div>
+    <div ng-repeat="person in displayResults" class="col s12 m7">
+      <div class="card small">  
+      <img src="">
+      <span class="card-title">{{person.name}}</span>    
       </div>
+	<div class="card-content">
+		<a ng-href="/athleteSearchResults/{{person.name}}">See Full Profile</a>
+	</div>
+	<div class="card-cation">
+        <button class="btn btn-danger" ng-click="remove()">Remove From List</button>
+    </div>
     </div>
 </div>

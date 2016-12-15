@@ -1,20 +1,30 @@
-<h1>Upload Media</h1>
-<p>Here's your chance to showcase yourself in action! If you have video or game stills you'd like to upload to your profile, you can do so below.</p>
-  <button class="btn btn-default" ngf-select="uploadFiles($files, $invalidFiles)" multiple
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <h1>Upload Media</h1>
+      <p>Here's your chance to showcase yourself in action! If you have video or game stills you'd like to upload to your profile, you can do so below. Otherwise, click on the button below to view your profile.</p>
+  </div>
+  <div class="col s7 offset-s3">
+      <input type="file" ng-model="model.file" change="upload(model)" />
+  </div>
+      <div class="col s8 offset-s2">
+      Files:
+        <ul>
+          <li ng-repeat="f in files" style="font:smaller">
+            <span class="progress" ng-show="f.progress >= 0"><div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div></span>
+            <button class="btn btn-danger" ng-click="delete()">Delete File</button>
+          </li>
+        </ul>
+      </div>
+    <div class="col s6 offset-s5">
+      <button class="btn btn-default"><a href="/profileView">View Completed Profile</a></button>
+    </div>
+  </div>
+
+
+
+    
+  <!-- <button class="btn btn-default" ngf-select="uploadFiles($files, $invalidFiles)" multiple
           accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
       Search my computer for files</button>
   <br><br>
-  Files:
-  <ul>
-    <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$errorParam}}
-      <span class="progress" ng-show="f.progress >= 0">
-        <div style="width:{{f.progress}}%"  
-            ng-bind="f.progress + '%'"></div>
-      </span>
-    </li>
-    <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
-    </li> 
-  </ul>
-  <button class="btn btn-default"><a href="/profileView">View Completed Profile</button>
-  <!-- {{errorMsg}} -->
-
+  <!-- {{errorMsg}} --> -->

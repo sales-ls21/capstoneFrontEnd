@@ -1,43 +1,56 @@
+<div class="row">
+	<div ng-repeat = "athlete in athletes">
+	<div class="col s8 offset-s2">
+  
 	<button class="btn btn-default"> <a href="/universitySearch">Search for Universities</a></button>
 	<button class="btn btn-default" ng-click="logOut()">LogOut</button>
-<div ng-repeat = "athlete in athletes">
-	<h1>{{athlete.name}}'s Profile</h1>
-	<div class="panel panel-default">
-		<div class="panel-body">
-		<h2>Basic Information</h2>
-			<div class="col-xs-7">Age: {{athlete.age}}</div>
-			<div class="col-xs-7">Birthdate: {{athlete.birthdate}}</div>
-			<div class="col-xs-7">Gender: {{athlete.gender}}</div>
-			<div class="col-xs-7">State: {{athlete.state}}</div>
-			<div class="col-xs-7">Sport: {{athlete.sport}}</div>
-		</div>
-
-		<div class="panel-body">
-		<h2>Athletic Information</h2>
-			<div class="col-xs-7">Height: {{athlete.height}}</div>
-			<div class="col-xs-7">Weight: {{athlete.weight}}</div>
-			<div class="col-xs-7">Position: {{athlete.position}}</div>
-			<div class="col-xs-7">Jersey Number: {{athlete.jersey}}</div>
-			<div class="col-xs-7">Years Varsity: {{athlete.varsity}}</div>
-			<div class="col-xs-7">Stats: {{athlete.stats}}</div>
-			<div class="col-xs-7">Athletic Awards: {{athlete.awards}}</div>
-			<div class="col-xs-7">Team Record: {{athlete.teamrecord}}</div>
-			<div class="col-xs-7">Team Awards: {{athlete.teamawards}}</div>
-			<div class="col-xs-7">Coach's Name: {{athlete.coachname}}</div>
-			<div class="col-xs-7">Coach's Email: {{athlete.coachemail}}</div>
-		</div>
-
-		<div class="panel-body">
-			<h2>Academic Information</h2>
-			<div class="col-xs-7">School Name: {{athlete.schoolname}}</div>
-			<div class="col-xs-7">School Location: {{athlete.schoollocation}}</div>
-			<div class="col-xs-7">Grade Point Average: {{athlete.GPA}}</div>
-			<div class="col-xs-7">Academic Activities and Awards: {{athlete.academic}}</div>
-		</div>
+		<h1>{{athlete.name}}'s Profile</h1>
+		<div class="panel panel-default">
+			<div class="col s4">
+			<h2>Basic Information</h2>
+				<div class="col-xs-7">Age: {{athlete.age}}</div>
+				<div class="col-xs-7">Birthdate: {{athlete.birthdate}}</div>
+				<div class="col-xs-7">Gender: {{athlete.gender}}</div>
+				<div class="col-xs-7">State: {{athlete.state}}</div>
+				<div class="col-xs-7">Sport: {{athlete.sport}}</div>
+			</div>
+			<div class="col s6 offset-s2">
+			<!-- <img src="basketball.jpg"> -->
+			</div>
 	</div>
+	<div class="row">
+			<div class="col12">
+			<h2>Athletic Information</h2>
+				<div class="col-xs-7">Height: {{athlete.height}}</div>
+				<div class="col-xs-7">Weight: {{athlete.weight}}</div>
+				<div class="col-xs-7">Position: {{athlete.position}}</div>
+				<div class="col-xs-7">Jersey Number: {{athlete.jersey}}</div>
+				<div class="col-xs-7">Years Varsity: {{athlete.varsity}}</div>
+				<div class="col-xs-7">Stats: {{athlete.stats}}</div>
+				<div class="col-xs-7">Athletic Awards: {{athlete.awards}}</div>
+				<div class="col-xs-7">Team Record: {{athlete.teamrecord}}</div>
+				<div class="col-xs-7">Team Awards: {{athlete.teamawards}}</div>
+				<div class="col-xs-7">Coach's Name: {{athlete.coachname}}</div>
+				<div class="col-xs-7">Coach's Email: {{athlete.coachemail}}</div>
+			</div>
 
-		<div ng-repeat="mediaitem in media">
-			<div class="col-md-4">{{mediaitem}}
+			<div class="panel-body">
+				<h2>Academic Information</h2>
+				<div class="col-xs-7">School Name: {{athlete.schoolname}}</div>
+				<div class="col-xs-7">School Location: {{athlete.schoollocation}}</div>
+				<div class="col-xs-7">Grade Point Average: {{athlete.GPA}}</div>
+				<div class="col-xs-7">Academic Activities and Awards: {{athlete.academic}}</div>
 			</div>
 		</div>
+	</div>
+</div>
+	<div class="row">
+		<div class="col s8 offset-s2">
+		<h2>Photos and Videos</h2>
+			<div ng-repeat="mediaitem in media">
+					<div class="col-md-4">{{mediaitem}}
+					</div>
+			</div>
+		</div>
+	</div>
 </div>

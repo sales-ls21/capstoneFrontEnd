@@ -17,9 +17,8 @@ userFactory.getSingleUser($scope.user).then((athleteArray)=>{
 // });
 
 $scope.logOut = ()=>{
-	authFactory.logoutUser().then((obj)=>{
+	authFactory.logoutUser();
 		$location.url("/");
-	});
 };
 
 });

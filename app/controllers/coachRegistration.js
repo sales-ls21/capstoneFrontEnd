@@ -17,7 +17,6 @@ app.controller("coachRegistration", function($scope, $location, authFactory, use
 		authFactory.createUser($scope.coach)
 		.then((newUser)=>{
 			$scope.coach.uid = newUser.uid;
-			$scope.coach.password = null;
 			userFactory.storeNewUser($scope.coach)
 			.then((storedObj)=>{
 				$location.url("/searchAthletes");
