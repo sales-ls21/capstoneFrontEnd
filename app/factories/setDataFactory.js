@@ -3,9 +3,9 @@
 app.factory("setDataFactory", function($location){
 	let athletes;
 	let selectedAthlete;
-	let major;
-	let sport;
-	let location;
+	let major = [];
+	let sport = [];
+	let location = [];
 	
 	let setAthletes = (searchedAthlete)=>{
 		athletes = searchedAthlete.data;
@@ -24,18 +24,23 @@ app.factory("setDataFactory", function($location){
 	};
 
 	let setMajor = (searchedMajor)=>{
-		major = searchedMajor;
+		major = Object.values(searchedMajor);
+		console.log(major);
 	};
 
 	let setSport = (searchedSport)=>{
-		sport = searchedSport;
+		sport = Object.values(searchedSport);
+		console.log(sport);
 	};
 
 	let setLocation = (searchedLocation)=>{
-		location = searchedLocation;
+		location = Object.values(searchedLocation);
+		// location = searchedLocation;
+		console.log(location);
 	};
 
 	let getLocation = ()=>{
+		console.log(location);
 		return location;
 	};
 

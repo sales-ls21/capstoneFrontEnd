@@ -1,0 +1,39 @@
+.headText{
+	height: 200px;
+}
+.scroll{
+	// background-repeat-y: no-repeat !important;
+	background-size: cover !important;
+	width: 100% !important;
+	height: 400px !important;
+}
+
+.paraimg{
+	width: 100%;
+	height: 350px;
+}
+.logo{
+	width: 150px;
+	height: 100px
+}
+
+.wrapper{
+	border: solid 1px black;
+	border-radius: 20px;
+	box-shadow: 3px 3px 5px 6px #ccc;;
+	padding: 20px;
+}
+
+.mainBody{
+	text-align: center;
+	background-image: url("diamond.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.profile{
+	border: solid 1px white;
+	border-radius: 20px;
+	color: white;
+	background-color: black;
+	padding: 20px;
+}

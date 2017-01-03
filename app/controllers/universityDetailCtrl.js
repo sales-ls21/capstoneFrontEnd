@@ -7,5 +7,7 @@ app.controller("universityDetailCtrl", function($scope, FBPull, $routeParams){
 		$scope.selectedItem = obj;
 		$scope.$apply();
 	});
+
+	
 });
 

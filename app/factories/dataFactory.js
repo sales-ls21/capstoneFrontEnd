@@ -18,6 +18,7 @@ app.factory("FBPull", (FBConfig, $http)=>{
 		return new Promise( (resolve, reject)=>{
 			$http.get(`${FBConfig.databaseURL}/universities.json?orderBy="${major}"`)
 			.then((obj)=>{
+				console.log(obj.data);
 				resolve(obj.data);
 			});
 		});
@@ -28,6 +29,7 @@ app.factory("FBPull", (FBConfig, $http)=>{
 		return new Promise( (resolve, reject)=>{
 			$http.get(`${FBConfig.databaseURL}/universities.json?orderBy="${sport}"`)
 			.then((obj)=>{
+				console.log(obj.data);
 				resolve(obj.data);
 			});
 		});
@@ -37,6 +39,7 @@ app.factory("FBPull", (FBConfig, $http)=>{
 		return new Promise( (resolve, reject)=>{
 			$http.get(`${FBConfig.databaseURL}/universities.json?orderBy="State"&equalTo="${location}"`)
 			.then((obj)=>{
+				console.log(obj.data);
 				resolve(obj.data);
 			});
 		});

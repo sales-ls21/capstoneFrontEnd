@@ -2,6 +2,10 @@
     <div class="col s8 offset-s2">
       <h1>Search for Universities by Major, Sport, or Location</h1>
       <p>Below you can search by either major, sport, or location. When entering a location, please enter the postal abbreviation (i.e. TN).</p>
+      <div>
+      <button class="btn btn-default"><a href="/profileView">Return To Profile</a></button>
+      <button class="btn btn-default" ng-click="logout()">Logout</button>
+      </div>
       <div class="row">
         <form>
           <div class="form-group">
@@ -19,6 +23,7 @@
             <input type="text" class="form-control" ng-model="location"/>
             <button class="btn btn-default" ng-click="searchLocation()">Search By Location</button>
           </div>
+
         </form>
       </div>
     </div>

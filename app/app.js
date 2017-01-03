@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("pipeline", ["ngRoute", "angularFileUpload"]);
+var app = angular.module("pipeline", ["ngParallax", "ngRoute", "angularFileUpload"]);
 
 //will need to set this up to prevent users from seeing info without being logged in
 let isAuth = function(authFactory){

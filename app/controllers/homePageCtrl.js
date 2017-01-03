@@ -2,6 +2,8 @@
 
 app.controller("homePageCtrl", function($scope, $timeout){
 
+    $scope.pattern = "images/basketball.jpg";
+    
 	$scope.registerStudent = function(){
 
 	};

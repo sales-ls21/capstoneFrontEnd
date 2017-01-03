@@ -2,11 +2,10 @@
         <div ng-repeat="university in selectedItem" class="col s8 offset-s2">
           <div class="card medium">
             <div class="card-image">
-              <img src="basketball.jpg">
-			  <h1 class="card-title">More Information About {{university.University}}</h1>
             </div>
             <div class="card-content">
 	            <div class="col s6">
+	            <img class="logo" src="{{university.image}}">
 					<p>Address: {{university.Address}}</p>
 					<p>City: {{university.City}}</p>
 					<p>State: {{university.State}}</p>
@@ -18,7 +17,7 @@
 	            </div>
             </div>
             <div class="card-action">
-				<button class="btn btn-default" href="/universitySearch">Return to Search</button>
+				<button class="btn btn-default"><a href="/universitySearch">Return to Search</a></button>
             </div>
           </div>
         </div>

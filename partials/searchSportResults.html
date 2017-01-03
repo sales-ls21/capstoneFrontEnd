@@ -1,10 +1,12 @@
  <div class="row">
     <h1>Search Results</h1>
-    <p>Click on a university to get more details.</p>
-   <div class="col s10 offset-s2" ng-repeat="university in sports">
-   </div>   
+    <p>Click on a university to get more details or enter key words in the search bar to refine your search.</p>
+    <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText.search">
+  </div>   
+
+   <div class="col s10 offset-s2" ng-repeat="university in sports | filter: searchText.search">
    <!-- <div class="col s10 offset-s2">  -->
-        <div class="col s12 m7">
+        <div class="col s8 m7">
           <div class="card small">
             <div class="card-image">
               <!-- <img src="basketball.jpg"> -->
@@ -13,6 +15,7 @@
               <span class="card-title">{{university.University}}</span>
               <p>{{university.Address}}, {{university.State}}, {{university.ZIP}}</p>
             </div>
+            <img class="logo" src="{{university.image}}">
             <div class="card-action">
               <a href="/universityDetails/{{university.University}}">Click for more information</a>
             </div>

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("universitySearchCtrl", function($scope, $location, FBPull, setDataFactory){
+app.controller("universitySearchCtrl", function($scope, $location, FBPull, setDataFactory, authFactory){
 
 	$scope.major = "";
 	$scope.sport = "";
@@ -28,7 +28,12 @@ app.controller("universitySearchCtrl", function($scope, $location, FBPull, setDa
 		.then((locationArray)=>{
 			setDataFactory.setLocation(locationArray);
 		});
-		$location.url("/searchLocationResults");
+			$location.url("/searchLocationResults");
+	};
+
+	$scope.logout = ()=>{
+		authFactory.logoutUser();
+		$location.url("/");
 	};
 	
 });
