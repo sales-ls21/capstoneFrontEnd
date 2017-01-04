@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("athleteDetailsCtrl", function($routeParams, $scope, userFactory){
+app.controller("athleteDetailsCtrl", function($location, $routeParams, $scope, userFactory){
 	
 	userFactory.findUserData($routeParams.name)
 	.then((obj)=>{
@@ -8,5 +8,9 @@ app.controller("athleteDetailsCtrl", function($routeParams, $scope, userFactory)
 		$scope.athleteObj = obj;
 		$scope.$apply();
 	});
+
+	$scope.return = ()=>{
+		$location.url("/searchAthletes");
+	};
 
 });

@@ -6,14 +6,11 @@
 	</div>
     <div ng-repeat="person in displayResults" class="col s12 m7">
       <div class="card small">  
-      <img src="">
+      <img class="sportPic" src="{{person.image}}">
       <span class="card-title">{{person.name}}</span>    
       </div>
 	<div class="card-content">
 		<a ng-href="/athleteSearchResults/{{person.name}}">See Full Profile</a>
 	</div>
-	<div class="card-cation">
-        <button class="btn btn-danger" ng-click="remove()">Remove From List</button>
-    </div>
     </div>
 </div>

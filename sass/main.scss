@@ -24,6 +24,39 @@
 	padding: 20px;
 }
 
+.sportPic{
+	width: 250px;
+	height: 200px;
+}
+
+.athleteBody, .coachBody{
+	text-align: center;
+	background: url(http://www.pixelstalk.net/wp-content/uploads/2016/06/Black-Red-Grunge-Texture.jpg);
+	background-size: 100% 100%;
+	font-weight: 900;
+  	position:fixed;
+  	-webkit-animation:100s scroll infinite linear;
+  	-moz-animation:100s scroll infinite linear;
+  	-o-animation:100s scroll infinite linear;
+  	-ms-animation:100s scroll infinite linear;
+	 animation:100s scroll infinite linear;
+	 width: 100%;
+	 height: 100%;
+	 // top:0;
+	 // left:0;
+}
+.infoBlk{
+	border: 1px solid black;
+	background-color: ivory;
+	color: black;
+	height: auto;
+}
+.wrapper{
+	background-color: white;
+	color: black;
+	height: auto;
+}
+
 .mainBody{
 	text-align: center;
 	background-image: url("diamond.jpg");
@@ -36,4 +69,69 @@
 	color: white;
 	background-color: black;
 	padding: 20px;
+}
+
+.searchBody{
+	text-align: center;
+	color: white;
+	font-weight: 750;
+	background-color: navy;
+	background-size: 100% 100%;
+}
+
+.resultBody{
+	background-color: navy;
+	background-size: 100% 100%;
+}
+
+.overlay{
+	text-align: center;
+	color: white;
+	font-weight: 900;
+  position:fixed;
+   background: url(https://s-media-cache-ak0.pinimg.com/736x/4a/0e/5b/4a0e5be2f967615f8675ff176c2fc69d.jpg);
+  -webkit-animation:100s scroll infinite linear;
+  -moz-animation:100s scroll infinite linear;
+  -o-animation:100s scroll infinite linear;
+  -ms-animation:100s scroll infinite linear;
+  animation:100s scroll infinite linear;
+  top:0;
+  left:0;
+  width:100%;
+ height:100%;
+}
+
+@-webkit-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+@keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+.wrap{
+  // width:400px;
+  margin:0 auto;
 }
